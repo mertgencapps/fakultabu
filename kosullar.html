@@ -1,9 +1,15 @@
 <!doctype html>
-<html lang="tr">
+<html lang="tr" data-lang="tr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kullanım Koşulları – Fakültabu</title>
+<script>
+(function(){var l=null;try{var q=new URLSearchParams(location.search).get('lang');if(q==='tr'||q==='en')l=q;}catch(e){}
+if(!l){try{var s=localStorage.getItem('fakultabu-lang');if(s==='tr'||s==='en')l=s;}catch(e){}}
+if(!l){var n=((navigator.languages&&navigator.languages[0])||navigator.language||'tr').toLowerCase();l=n.indexOf('tr')===0?'tr':'en';}
+document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l;})();
+</script>
 <style>
 :root{--bg:#ffffff;--fg:#1d1d1f;--muted:#6e6e73;--line:#e5e5ea;--card:#f5f5f7;--accent:#5b4bdb}
 @media (prefers-color-scheme:dark){:root{--bg:#000000;--fg:#f5f5f7;--muted:#a1a1a6;--line:#38383a;--card:#1c1c1e;--accent:#9d93ff}}
@@ -23,11 +29,18 @@ th,td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px soli
 th{color:var(--muted);font-weight:600}
 li{margin:4px 0}
 footer{margin-top:48px;color:var(--muted);font-size:13px}
+nav{align-items:center}
+.langs{margin-left:auto;display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.langs button{font:inherit;font-size:13px;font-weight:600;letter-spacing:.02em;background:none;border:0;color:var(--muted);padding:4px 12px;cursor:pointer}
+.langs button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.note{color:var(--muted);font-size:14px;font-style:italic}
+html:not([data-lang="en"]) [lang="en"].l, html[data-lang="en"] [lang="tr"].l{display:none}
 </style>
 </head>
 <body>
-<nav><a href="index.html">Destek</a><a href="gizlilik.html">Gizlilik Politikası</a><a href="kosullar.html" aria-current="page">Kullanım Koşulları</a></nav>
+<nav><a href="index.html"><span class="l" lang="tr">Destek</span><span class="l" lang="en">Support</span></a><a href="gizlilik.html"><span class="l" lang="tr">Gizlilik Politikası</span><span class="l" lang="en">Privacy Policy</span></a><a href="kosullar.html" aria-current="page"><span class="l" lang="tr">Kullanım Koşulları</span><span class="l" lang="en">Terms of Use</span></a><div class="langs" role="group" aria-label="Dil / Language"><button type="button" data-set="tr" aria-pressed="true">TR</button><button type="button" data-set="en" aria-pressed="false">EN</button></div></nav>
 <main>
+<div class="l" lang="tr">
 <h1>Kullanım Koşulları</h1>
 <p><strong>Son güncelleme:</strong> 27 Ekim 2026</p>
 <h2>1. Taraflar ve Kabul</h2>
@@ -74,7 +87,67 @@ footer{margin-top:48px;color:var(--muted);font-size:13px}
 <p>Bu Koşullar Türkiye Cumhuriyeti hukukuna tabidir. Tüketici sıfatıyla taraf olduğunuz uyuşmazlıklarda, Ticaret Bakanlığı'nca her yıl belirlenen parasal sınırlar dahilinde Tüketici Hakem Heyetlerine, bu sınırların üzerindeki uyuşmazlıklarda Tüketici Mahkemelerine başvurabilirsiniz.</p>
 <h2>11. İletişim</h2>
 <p>Sorularınız için: <strong><a href="mailto:mertgenc.apps@gmail.com">mertgenc.apps@gmail.com</a></strong></p>
+</div>
+<div class="l" lang="en">
+<h1>Terms of Use</h1>
+<p><strong>Last updated:</strong> 27 October 2026</p>
+<h2>1. Parties and Acceptance</h2>
+<p>These Terms of Use (the "Terms") govern the relationship between you, as a user of the <strong>Fakültabu</strong> mobile application (the "App"), and the App's developer, <strong>Mert Genç</strong> (the "Developer").</p>
+<p>By downloading or using the App, you accept these Terms. If you do not accept them, please do not use the App.</p>
+<p>For apps downloaded from the App Store, Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Licensed Application End User License Agreement (Standard EULA)</a> also applies. These Terms supplement Apple's Standard EULA.</p>
+<h2>2. Description of the App</h2>
+<p>The App is a taboo-style word party game (describe the word without saying the forbidden words), played by two teams on a single device, with decks made for university departments.</p>
+<p>Each department's <strong>General Deck</strong> is free. Course decks are unlocked through in-app purchases.</p>
+<h2>3. License to Use</h2>
+<p>The Developer grants you a non-exclusive, non-transferable, revocable license to use the App for personal, non-commercial purposes. You agree not to:</p>
+<ul>
+<li>copy, export or publish the App's card content in bulk, or use it in another product or service,</li>
+<li>reverse engineer or modify the App, or attempt to bypass its purchase system,</li>
+<li>use the App for unlawful purposes.</li>
+</ul>
+<h2>4. Content Entered by Users</h2>
+<p>Content you enter in the App, such as team names, is stored only on your device and is not seen by the Developer. You are responsible for making sure this content is lawful and appropriate.</p>
+<h2>5. In-App Purchases</h2>
+<ul>
+<li><strong>Price and payment:</strong> Course deck prices are shown on the App Store in Turkish lira, including taxes, or in your local App Store currency. Payment is collected by Apple through your Apple Account (Apple ID).</li>
+<li><strong>One-time purchase:</strong> Decks are not subscriptions. A deck you buy once stays unlocked permanently.</li>
+<li><strong>Restoring purchases:</strong> You can unlock your purchased decks again on devices using the same Apple Account with <strong>Settings &gt; Restore Purchases</strong> in the App.</li>
+<li><strong>Delivery and right of withdrawal:</strong> A purchased deck is unlocked on your device as soon as the payment is confirmed. You are also informed about this on the purchase screen. For this reason, under the exception in Article 15 of the Turkish Distance Contracts Regulation for intangible goods delivered instantly to the consumer, the right of withdrawal cannot be exercised.</li>
+<li><strong>Refunds:</strong> Refund requests are subject to Apple's refund policy and are sent to Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</li>
+<li><strong>Technical issues:</strong> If a deck you bought does not unlock or appears incomplete, please contact us at <strong><a href="mailto:mertgenc.apps@gmail.com">mertgenc.apps@gmail.com</a></strong>.</li>
+</ul>
+<h2>6. Content and Updates</h2>
+<ul>
+<li>Card content is created for <strong>entertainment and general knowledge</strong>. It is not medical, legal, academic or any other professional advice, and it may contain errors.</li>
+<li>The Developer may update the App and the content of its decks, correct cards or add new cards. Cards in a purchased deck may be changed to fix errors or improve quality.</li>
+<li>The Developer will make reasonable efforts to keep purchased decks accessible for as long as the App remains available on the App Store.</li>
+</ul>
+<h2>7. Intellectual Property</h2>
+<p>The App's design, software, card texts, deck structure and all other content belong to the Developer and are protected by intellectual property law.</p>
+<p>Names of brands, institutions, products and people that appear on cards are used only to identify the relevant concept. These names belong to their respective owners, and their use does not imply any connection with or endorsement by those owners.</p>
+<h2>8. Limitation of Liability</h2>
+<p>The App is provided "as is". The Developer does not guarantee that the App will work without interruption or errors.</p>
+<p>The Developer's liability is limited to the extent permitted by applicable law. Nothing in these Terms limits the Developer's liability for intent or gross negligence, or your rights under consumer protection law.</p>
+<h2>9. Changes and Termination</h2>
+<p>The Developer may update these Terms. The current version is always published on this page with the "Last updated" date shown above. By continuing to use the App after a change, you accept the updated Terms.</p>
+<p>You can end this relationship at any time by deleting the App from your device.</p>
+<h2>10. Governing Law and Disputes</h2>
+<p>These Terms are governed by the laws of the Republic of Türkiye. For disputes to which you are a party as a consumer, you may apply to the Consumer Arbitration Committees within the monetary limits set each year by the Turkish Ministry of Trade, and to the Consumer Courts for disputes above those limits. If you live outside Türkiye, this does not take away any mandatory consumer protections you have under the laws of your country of residence.</p>
+<h2>11. Contact</h2>
+<p>For questions: <strong><a href="mailto:mertgenc.apps@gmail.com">mertgenc.apps@gmail.com</a></strong></p>
+<p class="note">This is an English translation provided for convenience. If there is any difference between the versions, the Turkish version prevails.</p>
+</div>
 <footer>© 2026 Mert Genç · Fakültabu</footer>
 </main>
+<script>
+(function(){var T={"tr":"Kullanım Koşulları – Fakültabu","en":"Terms of Use – Fakültabu"};
+function apply(l,save){var h=document.documentElement;h.setAttribute('data-lang',l);h.lang=l;document.title=T[l];
+if(save){try{localStorage.setItem('fakultabu-lang',l);}catch(e){}
+try{var u=new URL(location.href);u.searchParams.set('lang',l);history.replaceState(null,'',u);}catch(e){}}
+document.querySelectorAll('.langs button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.set===l?'true':'false');});
+document.querySelectorAll('a[href$=".html"],a[href*=".html?"]').forEach(function(a){var p=a.getAttribute('href').split('?')[0];a.setAttribute('href',p+'?lang='+l);});}
+document.querySelectorAll('.langs button').forEach(function(b){b.addEventListener('click',function(){apply(b.dataset.set,true);});});
+apply(document.documentElement.getAttribute('data-lang')||'tr',false);})();
+</script>
 </body>
 </html>
