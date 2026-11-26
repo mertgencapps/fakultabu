@@ -1,9 +1,15 @@
 <!doctype html>
-<html lang="tr">
+<html lang="tr" data-lang="tr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Destek – Fakültabu</title>
+<script>
+(function(){var l=null;try{var q=new URLSearchParams(location.search).get('lang');if(q==='tr'||q==='en')l=q;}catch(e){}
+if(!l){try{var s=localStorage.getItem('fakultabu-lang');if(s==='tr'||s==='en')l=s;}catch(e){}}
+if(!l){var n=((navigator.languages&&navigator.languages[0])||navigator.language||'tr').toLowerCase();l=n.indexOf('tr')===0?'tr':'en';}
+document.documentElement.setAttribute('data-lang',l);document.documentElement.lang=l;})();
+</script>
 <style>
 :root{--bg:#ffffff;--fg:#1d1d1f;--muted:#6e6e73;--line:#e5e5ea;--card:#f5f5f7;--accent:#5b4bdb}
 @media (prefers-color-scheme:dark){:root{--bg:#000000;--fg:#f5f5f7;--muted:#a1a1a6;--line:#38383a;--card:#1c1c1e;--accent:#9d93ff}}
@@ -23,11 +29,18 @@ th,td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px soli
 th{color:var(--muted);font-weight:600}
 li{margin:4px 0}
 footer{margin-top:48px;color:var(--muted);font-size:13px}
+nav{align-items:center}
+.langs{margin-left:auto;display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.langs button{font:inherit;font-size:13px;font-weight:600;letter-spacing:.02em;background:none;border:0;color:var(--muted);padding:4px 12px;cursor:pointer}
+.langs button[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.note{color:var(--muted);font-size:14px;font-style:italic}
+html:not([data-lang="en"]) [lang="en"].l, html[data-lang="en"] [lang="tr"].l{display:none}
 </style>
 </head>
 <body>
-<nav><a href="index.html" aria-current="page">Destek</a><a href="gizlilik.html">Gizlilik Politikası</a><a href="kosullar.html">Kullanım Koşulları</a></nav>
+<nav><a href="index.html" aria-current="page"><span class="l" lang="tr">Destek</span><span class="l" lang="en">Support</span></a><a href="gizlilik.html"><span class="l" lang="tr">Gizlilik Politikası</span><span class="l" lang="en">Privacy Policy</span></a><a href="kosullar.html"><span class="l" lang="tr">Kullanım Koşulları</span><span class="l" lang="en">Terms of Use</span></a><div class="langs" role="group" aria-label="Dil / Language"><button type="button" data-set="tr" aria-pressed="true">TR</button><button type="button" data-set="en" aria-pressed="false">EN</button></div></nav>
 <main>
+<div class="l" lang="tr">
 <h1>Fakültabu – Destek</h1>
 <p>Üniversite bölümlerine özel desteleriyle oynanan bir yasaklı kelime parti oyunu.</p>
 <h2>Bize Ulaşın</h2>
@@ -49,7 +62,43 @@ Hayır. Satın almalar Apple Kimliğinize bağlıdır. Uygulamayı yeniden yükl
 <li><a href="gizlilik.html">Gizlilik Politikası ve KVKK Aydınlatma Metni</a></li>
 <li><a href="kosullar.html">Kullanım Koşulları</a></li>
 </ul>
+</div>
+<div class="l" lang="en">
+<h1>Fakültabu – Support</h1>
+<p>A taboo-style word party game played with decks made for university departments.</p>
+<h2>Contact Us</h2>
+<p>For questions, bug reports or suggestions: <strong><a href="mailto:mertgenc.apps@gmail.com">mertgenc.apps@gmail.com</a></strong></p>
+<p>We usually reply within a few business days.</p>
+<h2>Frequently Asked Questions</h2>
+<p><strong>I changed my phone and my purchased decks are missing.</strong>
+In the app, tap <strong>Settings &gt; Restore Purchases</strong>. You need to be signed in with the Apple Account (Apple ID) you used for the purchase.</p>
+<p><strong>A deck I bought did not unlock.</strong>
+First try <strong>Restore Purchases</strong>. If the problem continues, email us. If you can, attach a screenshot of the purchase receipt from Apple.</p>
+<p><strong>I want a refund.</strong>
+Payments are handled by Apple, so refund requests are sent to Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+<p><strong>What information does the app collect about me?</strong>
+None. The app does not ask you to create an account or for any personal information. Your game settings are stored only on your phone and are deleted when you delete the App. See the <a href="gizlilik.html">Privacy Policy</a> for details.</p>
+<p><strong>If I delete the app, will I lose my purchased decks?</strong>
+No. Purchases are tied to your Apple Account. After reinstalling the App, just tap <strong>Settings &gt; Restore Purchases</strong>.</p>
+<p><strong>Is the game available in English?</strong>
+The card content is in Turkish, the primary language of the game. Many technical terms appear in English, the way they are used in each field.</p>
+<h2>Legal</h2>
+<ul>
+<li><a href="gizlilik.html">Privacy Policy and KVKK Privacy Notice</a></li>
+<li><a href="kosullar.html">Terms of Use</a></li>
+</ul>
+</div>
 <footer>© 2026 Mert Genç · Fakültabu</footer>
 </main>
+<script>
+(function(){var T={"tr":"Destek – Fakültabu","en":"Support – Fakültabu"};
+function apply(l,save){var h=document.documentElement;h.setAttribute('data-lang',l);h.lang=l;document.title=T[l];
+if(save){try{localStorage.setItem('fakultabu-lang',l);}catch(e){}
+try{var u=new URL(location.href);u.searchParams.set('lang',l);history.replaceState(null,'',u);}catch(e){}}
+document.querySelectorAll('.langs button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.set===l?'true':'false');});
+document.querySelectorAll('a[href$=".html"],a[href*=".html?"]').forEach(function(a){var p=a.getAttribute('href').split('?')[0];a.setAttribute('href',p+'?lang='+l);});}
+document.querySelectorAll('.langs button').forEach(function(b){b.addEventListener('click',function(){apply(b.dataset.set,true);});});
+apply(document.documentElement.getAttribute('data-lang')||'tr',false);})();
+</script>
 </body>
 </html>
